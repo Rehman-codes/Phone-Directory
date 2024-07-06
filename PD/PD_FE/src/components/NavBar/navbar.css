@@ -1,0 +1,36 @@
+nav {
+    width: 100vw;
+    height: 15vh;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+
+
+  nav div img{
+    height: 70%;
+    width: 8%;
+  }
+
+  nav div a{
+    text-decoration-color: #4D4D4D;
+    color: #000000;
+    font-weight: bold;
+    margin: 2%;
+  }
+
+  nav div:first-child{
+    height: 80%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+  }
+
+  nav div:last-child{
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+  }

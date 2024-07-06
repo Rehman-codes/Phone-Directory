@@ -1,0 +1,31 @@
+#add-number-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40%;
+    width: 40%;
+    background-color: white;
+    padding: 2%;
+    border-radius: 5px;
+    border: 1px solid rgb(48, 48, 48);
+}
+
+
+#add-number-form input,button{
+    height: 50%;
+    width: 80%;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid rgb(48, 48, 48);
+    margin: 1.5%;
+}
+
+#add-number-form button{
+    cursor: pointer;
+    background-color: #ffa73b;
+}
+
+#add-number-form button:hover{
+    background-color: #ff8c00;
+}
