@@ -1,0 +1,63 @@
+#contacts-true {
+    display: none;
+    width: 90%;
+    height: 80%;
+    border-radius: 5px;
+    overflow-y: scroll;
+    padding: 1%;
+}
+
+.PhoneCard {
+    width: 90%;
+    height: 17%;
+    border-radius: 5px;
+    border: 1px solid rgb(38, 38, 38);
+    margin: 1% auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.PhoneCard #the-number{
+    height: 90%;
+    width: 35%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.PhoneCard #actions{
+    height: 90%;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.PhoneCard button{
+    width: 30%;
+    height: 70%;
+    border-radius: 5px;
+    border: 1px solid rgb(48, 48, 48);
+    margin: 1.5%;
+    cursor: pointer;
+    background-color: #ffa73b;
+}
+
+#contacts-true::-webkit-scrollbar {
+    width: 10px; 
+}
+
+#contacts-true::-webkit-scrollbar-track {
+    background: #ffffff; 
+    border-radius: 10px;
+}
+
+#contacts-true::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-radius: 10px;
+}
