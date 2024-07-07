@@ -27,7 +27,7 @@ function Directory() {
     return (
         <>
             <section>
-                {usersExist ? <ContactsTrue numbers={numbers} /> : <ContactsFalse />}
+                {usersExist ? <ContactsTrue numbers={numbers} setNumbers={setNumbers} /> : <ContactsFalse />}
             </section>
         </>
     )

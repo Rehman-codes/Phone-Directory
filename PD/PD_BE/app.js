@@ -50,3 +50,18 @@ app.get('/getNumbers', async (req, res) => {
         res.status(500).json({ message: 'Error fetching numbers', error: error.message });
     }
 });
+
+
+app.delete('/deleteNumber/:id', async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const deletedNumber = await PhoneNumber.findByIdAndDelete(id);
+        if (!deletedNumber) {
+            return res.status(404).json({ message: 'Number not found' });
+        }
+        res.json({ message: 'Number deleted successfully', data: deletedNumber });
+    } catch (error) {
+        res.status(500).json({ message: 'Error deleting number', error: error.message });
+    }
+});
