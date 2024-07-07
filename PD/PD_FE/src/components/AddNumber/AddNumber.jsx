@@ -1,19 +1,27 @@
 import './addnumber.css';
 import { useState } from 'react';
+import axios from 'axios';
+
+const backendUrl = `http://localhost:3000/addNumber`;
 
 function AddNumber() {
-
     const [number, setNumber] = useState("");
 
-    function handleSubmit(event){
+    function handleSubmit(event) {
         event.preventDefault();
-        console.log("Submitted number:", number);
+        
+        axios.post(backendUrl, { number })
+        .then(response => {
+            console.log("Backend response:", response.data);
+        })
+        .catch(error => {
+            console.error("Error sending data to backend:", error);
+        });
     }
 
-    function handleChange(event){
+    function handleChange(event) {
         setNumber(event.target.value);
     }
-
 
     return (
         <>

@@ -1,25 +1,33 @@
 import './directory.css';
+import axios from 'axios';
+import ContactsFalse from './ContactsFalse.jsx';
+import ContactsTrue from './ContactsTrue.jsx';
+import { useEffect, useState } from 'react';
+
+const backendUrl = `http://localhost:3000/getNumbers`;
 
 function Directory() {
+
+    const [usersExist, setUsersExists] = useState(false);
+    const [numbers, setNumbers] = useState([]);
+
+    useEffect(() =>{
+        axios.get(backendUrl)
+            .then(response => {
+                setNumbers(response.data);
+                setUsersExists(response.data.length > 0);
+            })
+            .catch(error => {
+                console.error("Error fetching data from backend:", error);
+            });
+
+    }, []);
+    
+
     return (
         <>
             <section>
-                <div id="contacts-false">
-                    <h3>No contacts added yet!</h3>
-                </div>
-
-                <div id="contacts-true">
-                    <div className='PhoneCard'>
-                        <div id='the-number'>
-                            <h3>xxxx-xxxxxxx</h3>
-                        </div>
-                        <div id='actions'>
-                            <button>Update</button>
-                            <button>Delete</button>
-                        </div>
-                    </div>
-                </div>
-                
+                {usersExist ? <ContactsTrue numbers={numbers} /> : <ContactsFalse />}
             </section>
         </>
     )
