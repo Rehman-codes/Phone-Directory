@@ -65,3 +65,19 @@ app.delete('/deleteNumber/:id', async (req, res) => {
         res.status(500).json({ message: 'Error deleting number', error: error.message });
     }
 });
+
+
+app.put('/updateNumber/:id', async (req, res) => {
+    const { id } = req.params;
+    const { number } = req.body;
+
+    try {
+        const updatedNumber = await PhoneNumber.findByIdAndUpdate(id, { number }, { new: true });
+        if (!updatedNumber) {
+            return res.status(404).json({ message: 'Number not found' });
+        }
+        res.json(updatedNumber);
+    } catch (error) {
+        res.status(500).json({ message: 'Error updating number', error: error.message });
+    }
+});

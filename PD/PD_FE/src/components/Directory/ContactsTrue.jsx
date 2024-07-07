@@ -1,10 +1,13 @@
+import React, { useState } from 'react';
 import axios from 'axios';
+import Popup from './Popup'; 
+import './popup.css';
 
 const backendUrl = `http://localhost:3000/deleteNumber`;
 
 function ContactsTrue(props) {
-
     const { numbers, setNumbers } = props;
+    const [selectedNumber, setSelectedNumber] = useState(null);
 
     const handleDelete = async (id) => {
         try {
@@ -15,7 +18,18 @@ function ContactsTrue(props) {
             console.error("Error deleting number:", error);
         }
     };
-    
+
+    const handleUpdate = (number) => {
+        setSelectedNumber(number); 
+    };
+
+    const handleClosePopup = () => {
+        setSelectedNumber(null);
+    };
+
+    const handleUpdateNumber = (updatedNumber) => {
+        setNumbers(prevNumbers => prevNumbers.map(number => number._id === updatedNumber._id ? updatedNumber : number));
+    };
 
     const Numbers = numbers.map((number) => (
         <div className='PhoneCard' key={number._id}>
@@ -23,21 +37,26 @@ function ContactsTrue(props) {
                 <h3>{number.number}</h3>
             </div>
             <div id='actions'>
-                <button>Update</button>
+                <button onClick={() => handleUpdate(number)}>Update</button>
                 <button onClick={() => handleDelete(number._id)}>Delete</button>
             </div>
         </div>
-
     ));
-
 
     return (
         <>
-            <div id="contacts-true" >
+            <div id="contacts-true">
                 {Numbers}
             </div>
+            {selectedNumber && (
+                <Popup
+                    number={selectedNumber}
+                    onClose={handleClosePopup}
+                    onUpdate={handleUpdateNumber}
+                />
+            )}
         </>
-    )
+    );
 }
 
 export default ContactsTrue;
