@@ -23,11 +23,12 @@ function Popup({ number, onClose, onUpdate }) {
                 <h2>Update Phone Number</h2>
                 <form onSubmit={handleSubmit}>
                     <input
-                        type="text"
+                        type="tel"
                         id="new-number"
                         value={newNumber}
                         onChange={(e) => setNewNumber(e.target.value)}
                         required
+                        pattern="[0-9]{4}-[0-9]{7}"
                     />
                     <button id='popup-update' type="submit">Update</button>
                     <button id='popup-cancel' type="button" onClick={onClose}>Cancel</button>
