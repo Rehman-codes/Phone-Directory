@@ -11,8 +11,8 @@ function Popup({ number, onClose, onUpdate }) {
         event.preventDefault();
         try {
             const response = await axios.put(`${backendUrl}/${number._id}`, { number: newNumber });
-            onUpdate(response.data); // Update the state in the parent component
-            onClose(); // Close the popup
+            onUpdate(response.data);
+            onClose();
         } catch (error) {
             console.error("Error updating number:", error);
         }
