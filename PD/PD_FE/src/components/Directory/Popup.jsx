@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const backendUrl = `http://localhost:3000/updateNumber`;
+const backendUrl = import.meta.env.VITE_BACKEND_URL + '/updateNumber';
+
 
 function Popup({ number, onClose, onUpdate }) {
     const [newNumber, setNewNumber] = useState(number.number);

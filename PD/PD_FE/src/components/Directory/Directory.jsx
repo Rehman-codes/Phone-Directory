@@ -4,7 +4,8 @@ import ContactsFalse from './ContactsFalse.jsx';
 import ContactsTrue from './ContactsTrue.jsx';
 import { useEffect, useState } from 'react';
 
-const backendUrl = `http://localhost:3000/getNumbers`;
+const backendUrl = import.meta.env.VITE_BACKEND_URL + '/getNumbers';
+
 
 function Directory() {
 

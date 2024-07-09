@@ -3,7 +3,8 @@ import axios from 'axios';
 import Popup from './Popup'; 
 import './popup.css';
 
-const backendUrl = `http://localhost:3000/deleteNumber`;
+const backendUrl = import.meta.env.VITE_BACKEND_URL + '/deleteNumber';
+
 
 function ContactsTrue(props) {
     const { numbers, setNumbers } = props;

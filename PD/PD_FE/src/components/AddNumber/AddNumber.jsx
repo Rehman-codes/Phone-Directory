@@ -2,7 +2,7 @@ import './addnumber.css';
 import { useState } from 'react';
 import axios from 'axios';
 
-const backendUrl = `http://localhost:3000/addNumber`;
+const backendUrl = import.meta.env.VITE_BACKEND_URL + '/addNumber';
 
 function AddNumber() {
     const [number, setNumber] = useState("");
