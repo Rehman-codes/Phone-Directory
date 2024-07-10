@@ -1,11 +1,13 @@
 import './addnumber.css';
 import { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const backendUrl = import.meta.env.VITE_BACKEND_URL + '/addNumber';
 
 function AddNumber() {
     const [number, setNumber] = useState("");
+    const navigate = useNavigate(); 
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -13,8 +15,9 @@ function AddNumber() {
         axios.post(backendUrl, { number })
         .then(response => {
             console.log("Backend response:", response.data);
+            alert('Number added successfully ✅');
             setNumber("");
-            alert('Number added successfully ✅')
+            navigate('/viewDirectory');
         })
         .catch(error => {
             console.error("Error sending data to backend:", error);
