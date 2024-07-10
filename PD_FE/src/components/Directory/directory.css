@@ -1,15 +1,14 @@
 #contacts-true {
     width: 90%;
     height: 80%;
-    border-radius: 5px;
     overflow-y: scroll;
     padding: 1%;
+    color: black;
 }
 
 .PhoneCard {
     width: 90%;
     height: 17%;
-    border-radius: 5px;
     border: 1px solid rgb(38, 38, 38);
     margin: 1% auto;
     display: flex;
@@ -19,7 +18,7 @@
     background-color: white;
 }
 
-.PhoneCard #the-number{
+.PhoneCard #the-number {
     height: 90%;
     width: 35%;
     display: flex;
@@ -28,7 +27,12 @@
     justify-content: flex-start;
 }
 
-.PhoneCard #actions{
+.PhoneCard #the-number h3{
+    font-weight: 100;
+    letter-spacing:5px;
+}
+
+.PhoneCard #actions {
     height: 90%;
     width: 60%;
     display: flex;
@@ -37,26 +41,33 @@
     justify-content: flex-end;
 }
 
-.PhoneCard button{
+.PhoneCard button {
     width: 30%;
     height: 70%;
-    border-radius: 5px;
     border: 1px solid rgb(48, 48, 48);
     margin: 1.5%;
     cursor: pointer;
-    background-color: #ffa73b;
+    background-color: #CDF2A7;
+}
+
+.PhoneCard #delete-button{
+    background-color: rgba(253, 90, 90, 0.749);
+}
+
+.PhoneCard button:hover{
+    background-color: #C2F291;
 }
 
 #contacts-true::-webkit-scrollbar {
-    width: 10px; 
+    width: 10px;
 }
 
 #contacts-true::-webkit-scrollbar-track {
-    background: #ffffff; 
+    background: #0d0d0d;
     border-radius: 10px;
 }
 
 #contacts-true::-webkit-scrollbar-thumb {
-    background: #000000;
+    background: #C2F291;
     border-radius: 10px;
 }

@@ -39,7 +39,7 @@ function ContactsTrue(props) {
             </div>
             <div id='actions'>
                 <button onClick={() => handleUpdate(number)}>Update</button>
-                <button onClick={() => handleDelete(number._id)}>Delete</button>
+                <button id='delete-button' onClick={() => handleDelete(number._id)}>Delete</button>
             </div>
         </div>
     ));

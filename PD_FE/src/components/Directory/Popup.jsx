@@ -21,7 +21,6 @@ function Popup({ number, onClose, onUpdate }) {
     return (
         <div className="popup">
             <div className="popup-content">
-                <h2>Update Phone Number</h2>
                 <form onSubmit={handleSubmit}>
                     <input
                         type="tel"
