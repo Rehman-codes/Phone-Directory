@@ -2,8 +2,6 @@ const PhoneNumber = require('../models/PhoneNumber');
 
 exports.addNumber = async (req, res) => {
     const { number } = req.body;
-    console.log("Received number:", number);
-
     const newPhoneNumber = new PhoneNumber({ number });
 
     try {
