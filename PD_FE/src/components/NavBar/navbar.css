@@ -11,8 +11,8 @@ nav {
 
 
   nav div img{
-    height: 70%;
-    width: 8%;
+    height: 100%;
+    width: 20%;
   }
 
   nav div a{
@@ -27,6 +27,11 @@ nav {
     width: 50%;
     display: flex;
     align-items: center;
+  }
+
+  nav div:first-child a{
+    height: 99%;
+    width: 50%;
   }
 
   nav div:last-child{
