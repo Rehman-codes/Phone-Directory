@@ -1,16 +1,13 @@
-const express = require('express');
-const {
-    addNumber,
-    getNumbers,
-    deleteNumber,
-    updateNumber
-} = require('../controllers/phoneNumberController');
-
+const phoneNumberController = require('../controllers/phoneNumberController');
+const express = require("express");
 const router = express.Router();
 
-router.post('/addNumber', addNumber);
-router.get('/getNumbers', getNumbers);
-router.delete('/deleteNumber/:id', deleteNumber);
-router.put('/updateNumber/:id', updateNumber);
+const { addNumber, getNumbers, deleteNumber, updateNumber } =
+  phoneNumberController;
+
+router.post("/addNumber", addNumber);
+router.get("/getNumbers", getNumbers);
+router.delete("/deleteNumber/:id", deleteNumber);
+router.put("/updateNumber/:id", updateNumber);
 
 module.exports = router;

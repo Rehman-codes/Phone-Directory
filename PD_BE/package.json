@@ -1,7 +1,7 @@
 {
-  "name": "ia",
+  "name": "pd",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
@@ -9,17 +9,14 @@
     "lint": "eslint ."
   },
   "keywords": [],
-  "author": "",
+  "author": "Abdur Rehman",
   "license": "ISC",
-  "description": "",
+  "description": "MERN CRUD App",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "helmet": "^7.1.0",
-    "mongodb": "^6.8.0",
-    "mongoose": "^8.4.4",
-    "morgan": "^1.10.0"
+    "mongoose": "^8.4.4"
   },
   "devDependencies": {
     "eslint": "^9.6.0",
