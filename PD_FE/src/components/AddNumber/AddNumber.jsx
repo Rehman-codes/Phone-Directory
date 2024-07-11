@@ -14,9 +14,8 @@ function AddNumber() {
         
         axios.post(backendUrl, { number })
         .then(response => {
-            console.log("Backend response:", response.data);
-            alert('Number added successfully ✅');
             setNumber("");
+            alert('Number added successfully ✅');
             navigate('/viewDirectory');
         })
         .catch(error => {

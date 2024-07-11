@@ -14,7 +14,6 @@ function ContactsTrue(props) {
         try {
             await axios.delete(`${backendUrl}/${id}`);
             setNumbers(prevNumbers => prevNumbers.filter(number => number._id !== id));
-            console.log("Delete successful");
         } catch (error) {
             console.error("Error deleting number:", error);
         }
