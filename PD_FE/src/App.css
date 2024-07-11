@@ -50,3 +50,15 @@ button {
     transform: translateY(0);
   }
 }
+
+
+@media(width <=900px){
+  .home-heading {
+    font-size:20px;
+  }
+
+  #home-heading-2{
+    font-size: 20px;
+  }
+
+}

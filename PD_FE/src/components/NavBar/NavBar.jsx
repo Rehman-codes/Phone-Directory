@@ -7,7 +7,7 @@ function NavBar() {
         <>
             <nav>
                 <div>
-                <Link to='/' > <img src={logo} alt="logo" /></Link>
+                <Link to='/' > <img id='logo' src={logo} alt="logo" /></Link>
                 </div>
                 <div>
                     <Link to='/' >Home</Link>

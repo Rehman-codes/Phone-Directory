@@ -61,3 +61,18 @@
 #popup-cancel {
   background-color: rgba(253, 90, 90, 0.749);
 }
+
+
+@media(width <=600px) {
+  .popup-content {
+    width: 60%;
+  }
+}
+
+
+@media(width <=1000px) and (width > 600px) {
+  .popup-content {
+    width: 50%;
+    height: 40%;
+  }
+}

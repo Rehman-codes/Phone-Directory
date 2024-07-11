@@ -8,6 +8,7 @@
     background-color: white;
     padding: 2%;
     border: 1px solid rgb(48, 48, 48);
+    color: black;
 }
 
 
@@ -32,3 +33,12 @@
 #add-number-form button:hover{
     background-color: #C2F291;
 }
+
+
+@media(width <=800px){
+    
+    #add-number-form {
+        height: 40%;
+        width: 80%;
+    }
+  }

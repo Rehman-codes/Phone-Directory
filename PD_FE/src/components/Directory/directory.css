@@ -27,9 +27,9 @@
     justify-content: flex-start;
 }
 
-.PhoneCard #the-number h3{
+.PhoneCard #the-number h3 {
     font-weight: 100;
-    letter-spacing:5px;
+    letter-spacing: 5px;
 }
 
 .PhoneCard #actions {
@@ -50,11 +50,11 @@
     background-color: #CDF2A7;
 }
 
-.PhoneCard #delete-button{
+.PhoneCard #delete-button {
     background-color: rgba(253, 90, 90, 0.749);
 }
 
-.PhoneCard button:hover{
+.PhoneCard button:hover {
     background-color: #C2F291;
 }
 
@@ -70,4 +70,33 @@
 #contacts-true::-webkit-scrollbar-thumb {
     background: #C2F291;
     border-radius: 10px;
+}
+
+@media(width <=800px) {
+    .PhoneCard {
+        width: 95%;
+    }
+
+    #contacts-true {
+        width: 99%;
+    }
+}
+
+
+@media(width <=620px) {
+
+    .PhoneCard #the-number {
+        height: 90%;
+        width: 45%;
+    }
+
+    .PhoneCard #the-number h3 {
+        font-weight: 100;
+        letter-spacing: 1px;
+    }
+
+    .PhoneCard #actions {
+        height: 90%;
+        width: 50%;
+    }
 }

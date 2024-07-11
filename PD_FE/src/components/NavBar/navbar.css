@@ -39,3 +39,20 @@ nav {
     display: flex;
     justify-content: flex-end;
   }
+
+  
+@media(width <=1000px) and (width >600px){
+  #logo{
+    height: 100%;
+    width: 35%;
+  }
+}
+
+
+@media(width <=600px){
+  #logo{
+    height: 100%;
+    width: 50%;
+  }
+  
+}
