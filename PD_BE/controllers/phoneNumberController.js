@@ -1,19 +1,19 @@
 const PhoneNumber = require("../models/PhoneNumber");
 
 exports.addNumber = async (req, res) => {
-  const { number } = req.body;
-  const newPhoneNumber = new PhoneNumber({ number });
+  const { number, name } = req.body;
+  const newPhoneNumber = new PhoneNumber({ number, name });
 
   try {
     const savedPhoneNumber = await newPhoneNumber.save();
     res.json({
-      message: "Received number successfully",
+      message: "Phone number added successfully",
       data: savedPhoneNumber,
     });
   } catch (error) {
     res
       .status(500)
-      .json({ message: "Error saving number", error: error.message });
+      .json({ message: "Error adding phone number", error: error.message });
   }
 };
 
@@ -24,7 +24,7 @@ exports.getNumbers = async (req, res) => {
   } catch (error) {
     res
       .status(500)
-      .json({ message: "Error fetching numbers", error: error.message });
+      .json({ message: "Error fetching phone numbers", error: error.message });
   }
 };
 
@@ -34,33 +34,36 @@ exports.deleteNumber = async (req, res) => {
   try {
     const deletedNumber = await PhoneNumber.findByIdAndDelete(id);
     if (!deletedNumber) {
-      return res.status(404).json({ message: "Number not found" });
+      return res.status(404).json({ message: "Phone number not found" });
     }
-    res.json({ message: "Number deleted successfully", data: deletedNumber });
+    res.json({ message: "Phone number deleted successfully", data: deletedNumber });
   } catch (error) {
     res
       .status(500)
-      .json({ message: "Error deleting number", error: error.message });
+      .json({ message: "Error deleting phone number", error: error.message });
   }
 };
 
 exports.updateNumber = async (req, res) => {
   const { id } = req.params;
-  const { number } = req.body;
+  const { number, name } = req.body;
 
   try {
     const updatedNumber = await PhoneNumber.findByIdAndUpdate(
       id,
-      { number },
+      { number, name },
       { new: true }
     );
     if (!updatedNumber) {
-      return res.status(404).json({ message: "Number not found" });
+      return res.status(404).json({ message: "Phone number not found" });
     }
-    res.json(updatedNumber);
+    res.json({
+      message: "Phone number updated successfully",
+      data: updatedNumber,
+    });
   } catch (error) {
     res
       .status(500)
-      .json({ message: "Error updating number", error: error.message });
+      .json({ message: "Error updating phone number", error: error.message });
   }
 };

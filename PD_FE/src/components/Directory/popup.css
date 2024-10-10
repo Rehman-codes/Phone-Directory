@@ -28,7 +28,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 7%;
+  margin: 1%;
   height: 95%;
   width: 95%;
 }
@@ -36,7 +36,7 @@
 .popup-content form input {
   width: 95%;
   height: 30%;
-  margin: 5%;
+  margin: 1%;
   text-align: center;
   border: 1px solid rgb(35, 35, 35);
 }

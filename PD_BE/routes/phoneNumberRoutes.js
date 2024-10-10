@@ -5,9 +5,9 @@ const router = express.Router();
 const { addNumber, getNumbers, deleteNumber, updateNumber } =
   phoneNumberController;
 
-router.post("/addNumber", addNumber);
-router.get("/getNumbers", getNumbers);
-router.delete("/deleteNumber/:id", deleteNumber);
-router.put("/updateNumber/:id", updateNumber);
+router.post("/numbers", addNumber);          
+router.get("/numbers", getNumbers);         
+router.delete("/numbers/:id", deleteNumber);
+router.put("/numbers/:id", updateNumber);   
 
 module.exports = router;

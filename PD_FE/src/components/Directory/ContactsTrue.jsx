@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Popup from './Popup'; 
+import Popup from './Popup';
 import './popup.css';
 
-const backendUrl = import.meta.env.VITE_BACKEND_URL + '/deleteNumber';
-
+const backendUrl = import.meta.env.VITE_BACKEND_URL + '/numbers';
 
 function ContactsTrue(props) {
     const { numbers, setNumbers } = props;
@@ -15,12 +14,12 @@ function ContactsTrue(props) {
             await axios.delete(`${backendUrl}/${id}`);
             setNumbers(prevNumbers => prevNumbers.filter(number => number._id !== id));
         } catch (error) {
-            console.error("Error deleting number:", error);
+            console.error("Error deleting contact:", error);
         }
     };
 
     const handleUpdate = (number) => {
-        setSelectedNumber(number); 
+        setSelectedNumber(number);
     };
 
     const handleClosePopup = () => {
@@ -28,13 +27,16 @@ function ContactsTrue(props) {
     };
 
     const handleUpdateNumber = (updatedNumber) => {
-        setNumbers(prevNumbers => prevNumbers.map(number => number._id === updatedNumber._id ? updatedNumber : number));
+        setNumbers(prevNumbers => prevNumbers.map(number =>
+            number._id === updatedNumber._id ? updatedNumber : number
+        ));
     };
 
     const Numbers = numbers.map((number) => (
         <div className='PhoneCard' key={number._id}>
             <div id='the-number'>
-                <h3>{number.number}</h3>
+                <h3>{number.name}</h3>
+                <p>{number.number}</p>
             </div>
             <div id='actions'>
                 <button onClick={() => handleUpdate(number)}>Update</button>

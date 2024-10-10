@@ -4,7 +4,7 @@ import ContactsFalse from './ContactsFalse.jsx';
 import ContactsTrue from './ContactsTrue.jsx';
 import { useEffect, useState } from 'react';
 
-const backendUrl = import.meta.env.VITE_BACKEND_URL + '/getNumbers';
+const backendUrl = import.meta.env.VITE_BACKEND_URL + '/numbers';
 
 
 function Directory() {
@@ -22,7 +22,7 @@ function Directory() {
                 console.error("Error fetching data from backend:", error);
             });
 
-    }, []);
+    }, [numbers]);
     
 
     return (
